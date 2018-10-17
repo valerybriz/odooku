@@ -1,0 +1,24 @@
+{
+  "name": "Odooku",
+  "description": "Run Odoo on Heroku",
+  "repository": "https://github.com/adaptivdesign/odooku",
+  "keywords": [
+    "odoo",
+    "openerp",
+    "python"
+  ],
+  "buildpacks": [
+    {
+      "url": "https://github.com/odooku/odooku-buildpack.git#10.0"
+    }
+
+  ],
+  "addons": [
+    "heroku-postgresql:hobby-basic",
+    "papertrail",
+    "heroku-redis"
+  ],
+  "scripts": {
+    "postdeploy": "odooku database preload"
+  }
+}
